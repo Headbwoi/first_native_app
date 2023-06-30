@@ -5,13 +5,15 @@ function GoalList({ goals, setShowModal, setId }) {
   return (
     <>
       <View style={styles.goalsView}>
-        <Text>List of goals.....</Text>
+        <Text style={{ fontSize: 14 }}>List of goals.....</Text>
       </View>
 
       <FlatList
         style={{
           width: "100%",
           padding: 20,
+          borderTopWidth: 2,
+          borderTopColor: "blue",
         }}
         data={goals}
         renderItem={(item) => {
@@ -27,6 +29,8 @@ function GoalList({ goals, setShowModal, setId }) {
                 <Text
                   style={{
                     color: "white",
+                    paddingHorizontal: 10,
+                    paddingVertical: 20,
                   }}
                 >
                   {item.item.text}
@@ -46,17 +50,16 @@ export default GoalList
 const styles = StyleSheet.create({
   goalsView: {
     paddingVertical: 20,
-    borderTopColor: "#0000",
-    borderTopWidth: 1,
   },
   goalList: {
-    margin: 7,
     width: "100%",
     backgroundColor: "#5555",
     borderRadius: 10,
+    overflow: "hidden",
+    marginVertical: 10,
   },
   pressable: {
     backgroundColor: "#245622",
-    padding: 10,
+    borderRadius: 10,
   },
 })
